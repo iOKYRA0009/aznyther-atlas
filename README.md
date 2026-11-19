@@ -1,9 +1,9 @@
 # Aznyther — Mundo Conhecido
 
-Atlas público de fantasia para os jogadores, versão 0.4.
+[Explorar Aznyther](https://iokyra0009.github.io/aznyther-atlas/)
 
-Mapas ilustrados, lugares exploráveis, Códice e crônicas públicas. Este repositório contém somente os arquivos estáticos da edição dos jogadores. O editor do Mestre, backups e fontes privadas ficam fora da publicação.
+Edição pública 0.5: mapas e retratos ilustrados, planeta com duas luas, lugares exploráveis, resumos nas cidades e Códice. Ferramentas do viajante: explorador, viagens por passagens conhecidas, caderno pessoal, relações e download offline nas Configurações.
 
-Hospedagem: GitHub Pages, branch `main`, pasta `/(root)`.
+O som começa na primeira interação; pode ser silenciado. Notas e preferências ficam em cada navegador. Conteúdo da campanha é atualizado pelo projeto, sem importar arquivos do Mestre no site.
 
-Para atualizar, substituir os arquivos pela próxima edição pública revisada, preservando `.nojekyll`.
+Este repositório contém somente a edição estática dos jogadores. Editor do Mestre, backups e fontes privadas ficam fora da publicação. Hospedagem GitHub Pages: main, /(root), preservando .nojekyll.
