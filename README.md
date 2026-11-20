@@ -1,9 +1,9 @@
 # Betelgeuse — Atlas de Aznyther
 
-Atlas interativo de Orivara e O Arquivo da Última Testemunha, com 19 testemunhos liberados pelo mestre.
+Atlas interativo de Orivara e O Arquivo da Última Testemunha, com19 testemunhos liberados pelo mestre.
 
-Versão 0.8: visita guiada, Mesa do Leitor, Observatório de Aznyther, trilhas documentadas, lentes cartográficas e Guia do Viajante interativo. Notas e progresso ficam no navegador, sem login.
+Versão0.9:87 novas artes individuais com miniaturas,49 localidades exploráveis por zoom,catálogo de lugares,minimapa interativo,Nivaldo no Guia e refinamento editorial. Drownald e Salazar mantêm as silhuetas escolhidas.
 
 Site: https://iokyra0009.github.io/aznyther-atlas/
 
-Arquivos estáticos de publicação. Fontes de origem e ferramentas do mestre permanecem separadas.
+Arquivos estáticos de publicação. Fontes de origem,ferramentas do mestre e arquivos privados permanecem separados.
