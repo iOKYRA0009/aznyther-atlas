@@ -1,9 +1,9 @@
 # Betelgeuse — Atlas de Aznyther
 
-Atlas público e gratuito de Orivara, com sete civilizações, Códice e Arquivo de Nemoris.
+[Explorar o atlas](https://iokyra0009.github.io/aznyther-atlas/)
 
-[Abrir o atlas](https://iokyra0009.github.io/aznyther-atlas/)
+Edição1.3.0: Crônicas de Orivara, navegação reorganizada e artes individuais. Inclui relatos ilustrados de vestígios e presenças. O acervo documental e os testemunhos conservam suas fontes.
 
-Versão 0.9.1: 42 novas paisagens e caminhos autorais, três sistemas de bacias, camadas cartográficas, minimapa e localização pelo Guia. A cartografia é ilustrativa, sem escala métrica; nomes autorais são identificados nas fichas.
+Site estático gratuito. Este repositório contém somente a edição pública compilada; planejamento privado e ferramentas do mestre não são distribuídos.
 
-Este repositório contém apenas a versão pública compilada.
+[Fontes e créditos](https://iokyra0009.github.io/aznyther-atlas/credits.html).
