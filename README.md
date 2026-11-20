@@ -1,11 +1,7 @@
-# Aznyther — O Despertar de Orivara · 0.6
+# Aznyther — Atlas do mundo conhecido
 
-Atlas público gratuito de campanha: https://iokyra0009.github.io/aznyther-atlas/
+Atlas gratuito de Aznyther e Orivara. Biblioteca visual0.6.1 com artes individuais e cartografia de Karak’Zul.
 
-Planeta 3D com duas luas, atmosfera e oceanos; descida e retorno à órbita; cartografia interativa, portais culturais e cenas exploráveis de Serekh/Draevor. Códice com109 registros, leitura ajustável, capítulos e galeria; teia de relações públicas, viagens por passagens conhecidas e caderno pessoal.
+Site dos jogadores: https://iokyra0009.github.io/aznyther-atlas/
 
-Compartilhe links diretos, marque visitas e crie pontos pessoais neste navegador. Configurações oferece letras, alto contraste, qualidade e download offline. Áudio original começa desligado: ative pelo botão de som. Sem contas, assinatura ou sincronização.
-
-As artes e posições locais são interpretações. Não estabelecem novas distâncias ou fatos canônicos. Ferramentas e dados do Mestre ficam fora deste repositório.
-
-Este repositório contém somente arquivos estáticos públicos auditados. GitHub Pages publica main/raiz. As atualizações preservam este mesmo endereço.
+Este repositório hospeda apenas a edição pública estática auditada. Não contém o editor privado do Mestre, fontes restritas ou backups.
