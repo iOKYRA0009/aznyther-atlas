@@ -1,9 +1,11 @@
-# Aznyther — Mundo Conhecido
+# Aznyther — O Despertar de Orivara · 0.6
 
-[Explorar Aznyther](https://iokyra0009.github.io/aznyther-atlas/)
+Atlas público gratuito de campanha: https://iokyra0009.github.io/aznyther-atlas/
 
-Edição pública 0.5: mapas e retratos ilustrados, planeta com duas luas, lugares exploráveis, resumos nas cidades e Códice. Ferramentas do viajante: explorador, viagens por passagens conhecidas, caderno pessoal, relações e download offline nas Configurações.
+Planeta 3D com duas luas, atmosfera e oceanos; descida e retorno à órbita; cartografia interativa, portais culturais e cenas exploráveis de Serekh/Draevor. Códice com109 registros, leitura ajustável, capítulos e galeria; teia de relações públicas, viagens por passagens conhecidas e caderno pessoal.
 
-O som começa na primeira interação; pode ser silenciado. Notas e preferências ficam em cada navegador. Conteúdo da campanha é atualizado pelo projeto, sem importar arquivos do Mestre no site.
+Compartilhe links diretos, marque visitas e crie pontos pessoais neste navegador. Configurações oferece letras, alto contraste, qualidade e download offline. Áudio original começa desligado: ative pelo botão de som. Sem contas, assinatura ou sincronização.
 
-Este repositório contém somente a edição estática dos jogadores. Editor do Mestre, backups e fontes privadas ficam fora da publicação. Hospedagem GitHub Pages: main, /(root), preservando .nojekyll.
+As artes e posições locais são interpretações. Não estabelecem novas distâncias ou fatos canônicos. Ferramentas e dados do Mestre ficam fora deste repositório.
+
+Este repositório contém somente arquivos estáticos públicos auditados. GitHub Pages publica main/raiz. As atualizações preservam este mesmo endereço.
