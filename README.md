@@ -1,9 +1,9 @@
 # Betelgeuse — Atlas de Aznyther
 
-Atlas interativo de Orivara e O Arquivo da Última Testemunha, com19 testemunhos liberados pelo mestre.
+Atlas público e gratuito de Orivara, com sete civilizações, Códice e Arquivo de Nemoris.
 
-Versão0.9:87 novas artes individuais com miniaturas,49 localidades exploráveis por zoom,catálogo de lugares,minimapa interativo,Nivaldo no Guia e refinamento editorial. Drownald e Salazar mantêm as silhuetas escolhidas.
+[Abrir o atlas](https://iokyra0009.github.io/aznyther-atlas/)
 
-Site: https://iokyra0009.github.io/aznyther-atlas/
+Versão 0.9.1: 42 novas paisagens e caminhos autorais, três sistemas de bacias, camadas cartográficas, minimapa e localização pelo Guia. A cartografia é ilustrativa, sem escala métrica; nomes autorais são identificados nas fichas.
 
-Arquivos estáticos de publicação. Fontes de origem,ferramentas do mestre e arquivos privados permanecem separados.
+Este repositório contém apenas a versão pública compilada.
