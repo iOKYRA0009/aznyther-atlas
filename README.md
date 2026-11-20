@@ -1,7 +1,7 @@
-# Aznyther — Atlas do mundo conhecido
+# Betelgeuse — Atlas de Aznyther
 
-Atlas gratuito de Aznyther e Orivara. Biblioteca visual0.6.1 com artes individuais e cartografia de Karak’Zul.
+Atlas interativo de Orivara e Arquivo de Nemoris, com19testemunhos liberados pelo mestre.
 
-Site dos jogadores: https://iokyra0009.github.io/aznyther-atlas/
+Site: https://iokyra0009.github.io/aznyther-atlas/
 
-Este repositório hospeda apenas a edição pública estática auditada. Não contém o editor privado do Mestre, fontes restritas ou backups.
+Arquivos estáticos de publicação. Fontes, ferramentas do mestre e arquivos de origem ficam separados.
