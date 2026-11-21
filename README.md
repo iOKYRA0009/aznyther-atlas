@@ -2,7 +2,7 @@
 
 [Explorar o atlas](https://iokyra0009.github.io/aznyther-atlas/)
 
-Edição1.5.1: Quatro relíquias de Dungeons & Dragons narradas por Nivaldo Véspera, cada uma com arte e miniatura próprias. O acervo documental e os testemunhos conservam suas fontes.
+Edição 1.6.0: Aznyther sob uma lua. Quatro relíquias de Dungeons & Dragons possuem fichas e artes próprias; lendas e relatos preservam a incerteza dos testemunhos. O acervo documental conserva suas fontes.
 
 Site estático gratuito. Este repositório contém somente a edição pública compilada; planejamento privado e ferramentas do mestre não são distribuídos.
 
