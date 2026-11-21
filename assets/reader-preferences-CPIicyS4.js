@@ -1,0 +1,1 @@
+function c(r,e,n){try{const t=JSON.parse(localStorage.getItem(r)??"null");return typeof t=="string"&&t.length<=160&&(!n||n.includes(t))?t:e}catch{return e}}function s(r,e){try{localStorage.setItem(r,JSON.stringify(e))}catch{}}export{c as r,s};
