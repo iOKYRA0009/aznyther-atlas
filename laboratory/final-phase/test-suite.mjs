@@ -1,0 +1,12 @@
+function runTests({view,apply,fixture}){
+const at='2026-11-24T00:00:00Z', M='demo-master', A='demo-a', B='demo-b';
+let s=fixture(), count=0;const assert=(v,m)=>{if(!v)throw Error(m);count++;}; const run=(a,c)=>{s=apply(s,a,c,at);}; const reject=(a,c)=>{let ok=false;try{apply(s,a,c,at)}catch{ok=true}assert(ok,'Deveria rejeitar '+c.type);};
+assert(view(s,B).letters.length===0,'Carta vazada');assert(view(s,B).achievements.length===1,'Conquista secreta vazada');
+reject(A,{type:'news.create',title:'x',body:'x',kind:'rumor'});run(M,{type:'news.create',title:'Teste',body:'Rascunho',kind:'notice'});
+assert(view(s,A).news.length===1,'Rascunho vazado');run(M,{type:'news.publish',id:s.news.at(-1).id});assert(view(s,B).news.length===2,'Publicação ausente');
+run(M,{type:'achievement.award',playerId:B,achievementId:'demo-ach2'});run(M,{type:'achievement.award',playerId:B,achievementId:'demo-ach2'});assert(view(s,B).awards.length===1,'Premiação duplicada');assert(view(s,A).achievements.length===1,'Segredo vazado para A');
+reject(B,{type:'letter.reply',id:'demo-l1',body:'x'});reject(B,{type:'letter.read',id:'demo-l1'});run(A,{type:'letter.read',id:'demo-l1'});assert(view(s,A).letters[0].read,'Leitura ausente');run(A,{type:'letter.reply',id:'demo-l1',body:'Respondido'});run(M,{type:'letter.reply',id:'demo-l1',body:'Retorno'});assert(view(s,A).letters[0].messages.length===3&&!view(s,A).letters[0].read,'Retorno não sinalizado');assert(view(s,B).letters.length===0,'Conversa vazada');
+run(A,{type:'theory.create',title:'Hipótese',note:'Não é fato'});const tid=s.theories[0].id;assert(view(s,B).theories.length===0,'Teoria privada vazada');reject(B,{type:'theory.addRef',theoryId:tid,refId:'demo-r1'});run(A,{type:'theory.addRef',theoryId:tid,refId:'demo-r1'});run(A,{type:'theory.addRef',theoryId:tid,refId:'demo-r3'});reject(A,{type:'theory.share',theoryId:tid,scope:'party'});const n=s.theories[0].nodes;run(A,{type:'theory.link',theoryId:tid,from:n[0].id,to:n[1].id,label:'Hipótese'});reject(A,{type:'theory.link',theoryId:tid,from:n[0].id,to:n[0].id,label:'inválido'});run(A,{type:'theory.removeRef',theoryId:tid,id:n[1].id});assert(s.theories[0].edges.length===0,'Aresta órfã');run(A,{type:'theory.share',theoryId:tid,scope:'party'});assert(view(s,B).theories.length===1,'Compartilhamento ausente');reject(A,{type:'theory.addRef',theoryId:tid,refId:'demo-r3'});run(A,{type:'theory.share',theoryId:tid,scope:'private'});assert(view(s,B).theories.length===0,'Revogação falhou');assert(fixture().seq===100,'Fixture alterada');return count;
+}
+
+export {runTests};
