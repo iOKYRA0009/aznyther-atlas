@@ -1,4 +1,4 @@
-# Aznyther — laboratório da fase final (v0.1)
+# Aznyther — laboratório da fase final (v0.2)
 Status: protótipo funcional isolado, não integrado, sem Nemoris.
 Base pública observada: 2.1.7, a7ea60d06ffb432ffbf8817a5344c5d8815ec0c0. O repositório público contém o build, não os fontes do HD. Não modificar assets compilados nem misturar os commits da versão pública anterior com os fontes.
 ## Executar
@@ -14,3 +14,6 @@ core.mjs: funções de domínio e fixtures fictícias. demo.mjs/index.html/lab.c
 5. Integrar um módulo por vez, com rotas e navegação coerentes, testes de regressão, acessibilidade, mobile e segurança. Validar dados legados e rollback. Não publicar antes do aceite real. Não adicionar IA de Nemoris neste lote.
 ## Limites
 A demonstração não prova segurança real, compatibilidade com 2.2.0, nem comportamento em produção. Testes sintéticos cobrem regras de domínio. Interface precisa de teste de navegador e adaptação ao design final. Não há dados reais, arquivos privados ou alterações na main.
+
+## Integrações v0.2
+Referências derivadas por ID news:, letter:, award:; resolução apenas no escopo autorizado. Diário idempotente e linha do tempo derivada do escopo visível. Notícias retiradas deixam de aparecer no Diário, anexos e murais compartilhados que dependiam delas. Isso não apaga informações já lidas por pessoas. Mestre anexa registro acessível ao destinatário; cartas e prêmios continuam privados. Mural tem submissão, retirada, revisão, devolução e aceite; prêmio opcional atômico no domínio. Parecer privado, aceite não confirma cânone. Mural aceito não permite edição de conteúdo. Migração v1→v2 apenas de dados fictícios locais. Reusar Diário, Códice, NPCs e Estocásticos reais em vez de duplicar. A produção exige autorização por servidor, transações, revogação de cache, concorrência, testes de emulador e navegador. O texto livre pode conter segredos escritos pelo jogador; compartilhamento exige decisão consciente. Nemoris excluído. Execute node --test tests.mjs.

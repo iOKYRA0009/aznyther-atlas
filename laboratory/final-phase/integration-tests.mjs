@@ -1,0 +1,38 @@
+function runIntegrationTests({view,apply,fixture,journey,migrate}){
+ const M='demo-master',A='demo-a',B='demo-b',at='2026-11-24T00:00:00Z';let s=fixture(),count=0;
+ const assert=(v,m)=>{if(!v)throw Error(m);count++;};const run=(a,c)=>{s=apply(s,a,c,at);};const reject=(a,c)=>{const before=JSON.stringify(s);let ok=false;try{apply(s,a,c,at)}catch{ok=true}assert(ok&&JSON.stringify(s)===before,'Expected atomic rejection: '+c.type);};
+ const ref=(a,id)=>view(s,a).refs.find(r=>r.id===id);
+ assert(ref(A,'news:demo-n1')&&ref(B,'news:demo-n1'),'News reference missing');
+ assert(ref(A,'letter:demo-l1')&&!ref(B,'letter:demo-l1'),'Letter exposed');
+ assert(ref(A,'award:demo-aw1')&&!ref(B,'award:demo-aw1'),'Award exposed');
+ assert(!('allowed' in ref(A,'demo-r3')),'Audience metadata exposed');
+ run(A,{type:'journal.save',refId:'news:demo-n1'});run(A,{type:'journal.save',refId:'news:demo-n1'});
+ assert(view(s,A).journal.length===1&&!view(s,B).journal.length,'Journal isolation');
+ reject(B,{type:'journal.save',refId:'letter:demo-l1'});reject(B,{type:'theory.fromRef',refId:'letter:demo-l1'});
+ run(A,{type:'theory.fromRef',refId:'news:demo-n1'});const t=s.theories[0].id;
+ run(A,{type:'theory.addRef',theoryId:t,refId:'demo-r1'});const ns=s.theories[0].nodes;
+ reject(A,{type:'theory.submit',theoryId:t});
+ run(A,{type:'theory.link',theoryId:t,from:ns[0].id,to:ns[1].id,label:'Comparar versões'});
+ run(A,{type:'theory.share',theoryId:t,scope:'party'});run(A,{type:'theory.submit',theoryId:t});
+ reject(A,{type:'theory.addRef',theoryId:t,refId:'demo-r2'});reject(B,{type:'theory.review',theoryId:t,result:'approved',feedback:'x'});
+ reject(M,{type:'theory.review',theoryId:t,result:'changes',feedback:'x',achievementId:'demo-ach2'});
+ run(M,{type:'theory.review',theoryId:t,result:'changes',feedback:'Compare horários'});
+ assert(view(s,A).theories[0].review.feedback==='Compare horários'&&!view(s,B).theories[0].review,'Feedback leak');
+ run(A,{type:'theory.submit',theoryId:t});run(A,{type:'theory.withdraw',theoryId:t});assert(view(s,A).theories[0].status==='draft','Withdraw failed');
+ run(A,{type:'theory.submit',theoryId:t});run(M,{type:'theory.review',theoryId:t,result:'approved',feedback:'Aceite',achievementId:'demo-ach2'});
+ assert(view(s,A).awards.some(w=>w.sourceTheoryId===t)&&!view(s,B).achievements.some(x=>x.id==='demo-ach2'),'Review grant failed or leaked');
+ reject(M,{type:'theory.review',theoryId:t,result:'approved',feedback:'again',achievementId:'demo-ach2'});
+ reject(M,{type:'letter.send',playerId:B,sender:'NPC',subject:'Anexo',body:'Teste',attachmentRefId:'demo-r3'});
+ run(M,{type:'letter.send',playerId:A,sender:'NPC',subject:'Anexo',body:'Teste',attachmentRefId:'news:demo-n1'});
+ assert(view(s,A).letters[0].attachmentRefId==='news:demo-n1'&&!view(s,B).letters.length,'Attachment isolation');
+ assert(journey(view(s,A)).some(e=>e.kind==='award')&&!journey(view(s,B)).some(e=>e.kind==='letter'),'Timeline leak');
+ run(M,{type:'news.retract',id:'demo-n1'});
+ assert(!ref(A,'news:demo-n1')&&!view(s,A).journal.length,'Revoked news still in journal');
+ assert(view(s,A).letters[0].attachmentRefId===null&&!view(s,B).theories.length,'Revocation failed');
+ reject(A,{type:'journal.save',refId:'news:demo-n1'});
+ const old={...fixture(),version:1};delete old.journal;const migrated=migrate(old);
+ assert(migrated.version===2&&migrated.journal.length===0&&old.version===1,'Migration failed');
+ assert(!JSON.stringify(journey(view(s,B))).includes('Uma página desaparecida'),'Timeline leak');
+ return count;
+}
+export {runIntegrationTests};
